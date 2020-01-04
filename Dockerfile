@@ -1,4 +1,4 @@
-FROM ruby:2.5.5-slim
+FROM ruby:2.6.5-slim
 LABEL maintainer="cheimke@loumaris.com"
 
 WORKDIR /app
@@ -23,4 +23,7 @@ RUN echo "set input-meta on" >> /etc/inputrc && \
 RUN gem install bundler
 
 # install some tools
-RUN apt-get install -y cron build-essential git nodejs imagemagick libpq-dev 
+RUN apt install -y build-essential libpq-dev nodejs xvfb libfontconfig wkhtmltopdf
+
+# clean up
+RUN  apt-get autoremove -y
