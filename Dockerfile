@@ -7,7 +7,7 @@ EXPOSE 3000
 
 # Set the locale
 RUN apt-get update && \
-    apt-get install -y locales
+    apt-get install -y locales build-essential libpq-dev nodejs xvfb libfontconfig wkhtmltopdf git curl
 
 ENV locale-gen C.UTF-8 && \
     LANG=C.UTF-8 \
@@ -21,9 +21,6 @@ RUN echo "set input-meta on" >> /etc/inputrc && \
 
 # install bundler
 RUN gem install bundler
-
-# install some tools
-RUN apt install -y build-essential libpq-dev nodejs xvfb libfontconfig wkhtmltopdf
 
 # clean up
 RUN  apt-get autoremove -y
