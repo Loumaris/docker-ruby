@@ -7,7 +7,7 @@ EXPOSE 3000
 
 # Set the locale
 RUN apt-get update && \
-    apt-get install -y locales build-essential libpq-dev nodejs xvfb libfontconfig wkhtmltopdf git curl
+    apt-get install -y locales build-essential libpq-dev nodejs xvfb libfontconfig git curl sqlite3 libsqlite3-dev
 
 ENV locale-gen C.UTF-8 && \
     LANG=C.UTF-8 \
