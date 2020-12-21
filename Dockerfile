@@ -1,4 +1,4 @@
-FROM ruby:2.6.5-slim
+FROM ruby:2.6.6-slim
 LABEL maintainer="cheimke@loumaris.com"
 
 WORKDIR /app
